@@ -1,0 +1,359 @@
+// Global
+.container
+  max-width 1520px
+  padding 0px 30px
+  margin 0 auto
+
+.site-container
+  overflow hidden
+
+.flex
+  display flex
+
+.btn-reset
+  display block
+  border none
+  outline none
+  background-color transparent
+  cursor pointer
+  padding 0
+
+.btn
+  font-size 16px
+  line-height 14px
+  letter-spacing 2.18182px
+  color whiteColor
+  padding 30px 80px
+  text-transform uppercase
+  border-radius 8px
+
+.section-title
+  font-size 64px
+  line-height 80px
+  color darkColor
+
+  &--center
+    text-align center
+    max-width none
+
+// Header
+.header
+  position absolute
+  width 100%
+  top 0
+  left 0
+  z-index 1000
+
+  &__container
+    justify-content space-between
+    padding 55px 30px
+    align-items center
+
+    +h(bp-h-big)
+      padding 40px 30px
+
+    +h(bp-h-medium)
+      padding 30px
+
+.social
+  display flex
+  align-items center
+
+  &__item
+    &:not(:last-child)
+      margin-right 40px
+
+  &__link
+    display block
+
+    &--fb
+      width 11px
+      height 20px
+      coverbg('svg/facebook.svg')
+
+    &--tw
+      width 20px
+      height 16px
+      coverbg('svg/twitter.svg')
+
+.logo
+  text-transform uppercase
+  font-weight 800
+  font-size 22px
+  line-height 1
+  text-align center
+  letter-spacing 2px
+  color whiteColor
+
+.burger
+  width 48px
+  height 10px
+  position relative
+
+  &__line
+    width 100%
+    height 2px
+    background-color whiteColor
+    position absolute
+    top 0
+    left 0
+
+    &:last-child
+      top auto
+      bottom 0
+
+// Hero
+.hero
+  height 100vh
+  min-height 660px
+  padding-top 200px
+  coverbg('img/hero.png')
+
+  +h(bp-h-big)
+    padding-top 150px
+
+  +h(bp-h-medium)
+    padding-top 100px
+
+  &__container
+    position relative
+    height 100%
+    padding-bottom 200px
+
+  &__new-book
+    text-transform uppercase
+    font-size 11px
+    letter-spacing 2px
+    color whiteColor
+    padding 17px 30px
+    border 1px solid whiteColor
+    background-color rgba(darkColor, 40%)
+    mix-blend-mode normal
+    border-radius 24px
+
+    +h(bp-h-big)
+      padding 15px 25px
+
+  &__title
+    max-width 35%
+    margin-top 50px
+    font-size 80px
+    line-height 84px
+    color whiteColor
+
+    +h(bp-h-big)
+      margin-top 45px
+      font-size 70px
+      line-height 70px
+
+    +h(bp-h-medium)
+      margin-top 70px
+      font-size 60px
+      line-height 60px
+
+    +w(bp-w-large)
+      max-width 70%
+
+  &__text
+    font-family SFCompactText-Regular
+    font-size 15px
+    line-height 16px
+    color whiteColor
+    max-width 30%
+    margin-top 45px
+
+    +h(bp-h-big)
+      margin-top 35px
+
+    +w(bp-w-large)
+      max-width 50%
+
+  &__buy-btn
+    background darkOrange
+    margin-top 45px
+
+    +h(bp-h-big)
+      padding 25px 60px
+
+    +h(bp-h-medium)
+      padding 20px 50px
+
+    &:active
+      background darken(darkOrange, 10%)
+
+  &__bottom
+    position absolute
+    left 50%
+    bottom 0
+    transform translateX(-50%)
+    width calc(100% - 60px)
+    display flex
+    align-items flex-end
+
+.search-form
+  width calc(100% - 500px)
+  position relative
+  border-radius 4px 0 0 0
+  overflow hidden
+  height 120px
+
+  +h(bp-h-big)
+    height 100px
+
+  +h(bp-h-medium)
+    height 80px
+
+  &__field
+    background-color #ffffff
+    padding 50px 90px 50px 50px
+    width 100%
+    height 100%
+    box-shadow inset 0px -2px 0px rgba(223, 223, 223, .5)
+    font-size 16px
+    line-height 19px
+    color darkColor
+
+  &__button
+    coverbg('svg/search.svg')
+    size(18px)
+    position absolute
+    right 60px
+    bottom 50%
+    transform translateY(50%)
+
+.main-slider
+  box-shadow 0px 4px 4px rgba(0, 0, 0, .25)
+  border-radius 8px 8px 0px 0px
+  line-height 1
+  position absolute
+  right 0
+
+  &__text
+    height 120px
+    display flex
+    align-items center
+    justify-content center
+    background-color neptuneColor
+    color whiteColor
+    font-size 12px
+    line-height 1
+    text-align center
+    letter-spacing 2.18px
+    text-transform uppercase
+
+    +h(bp-h-big)
+      height 100px
+
+    +h(bp-h-medium)
+      height 80px
+
+// Become
+.become
+  padding 120px 0
+  background-color #fff
+  position relative
+
+  &__title
+    max-width 45%
+    margin-bottom 80px
+
+  &__list
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(350px, 1fr))
+    grid-gap 10px
+
+  &__item
+    position relative
+    margin 0 auto
+    max-width 350px
+    border-radius 10px
+    overflow hidden
+
+    &:hover
+      &:before
+        opacity .9
+        visibility visible
+
+      .become__text
+        opacity 1
+        visibility visible
+        transform translate(0)
+
+    &:before
+      content ''
+      transition opacity .3s ease
+      background neptuneColor
+      mix-blend-mode normal
+      opacity 0
+      visibility hidden
+      border-radius 4px
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      z-index 100
+
+  &__image
+    width 100%
+    max-height 100%
+    object-fit cover
+
+  &__text
+    position absolute
+    z-index 100
+    left 40px
+    bottom 60px
+    font-size 24px
+    line-height 31px
+    color whiteColor
+    transform translateY(200px)
+    transition transform .3s ease-in-out
+
+.featured
+  position relative
+  padding 100px 0
+  coverbg('img/storiesBG.png')
+
+  &__stories
+    background-color featuredLeftColor
+    mix-blend-mode normal
+    opacity .94
+    width 35%
+    height 100%
+    position absolute
+    right 0
+    top 0
+
+.blog-arcticle
+  &__category
+    background darkOrange
+    border-radius 24px
+    font-size 14px
+    line-height 13px
+    text-align center
+    letter-spacing 2px
+    color whiteColor
+    padding 18px 30px
+    margin-bottom 16px
+    text-transform uppercase
+
+  &__title
+    font-size 48px
+    line-height 64px
+    color whiteColor
+    margin-bottom 16px
+
+  &__text
+    font-size 14px
+    line-height 21px
+    color whiteColor
+    margin-bottom 40px
+    max-width 40%
+
+  &__btn
+    margin-top 45px
+    background-color neptuneColor
+
+    &:active
+      background-color darken(neptuneColor, 10%)

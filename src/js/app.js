@@ -1,14 +1,11 @@
-import hi from "./utils/com.js";
+import Swiper from 'swiper'
+import 'swiper/swiper-bundle.css'
 
-console.log(`
-   ______________
-  < Webpack work? >
-   --------------
-          \   ^__^
-           \  (@@)\_______
-              (__)\       )\/\
-                  ||----w |
-                  ||     ||
-  `);
-
-hi();
+var mySwiper = new Swiper('.slider__container', {
+	direction: 'horizontal',
+  loop: true,
+  slidesPerView:'auto',
+	centeredSlides: true,
+  spaceBetween: 100,
+  autoplay: true,
+})

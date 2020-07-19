@@ -27,6 +27,18 @@
   text-transform uppercase
   border-radius 8px
 
+.feature-btn
+  border-radius 24px
+  font-size 14px
+  line-height 13px
+  text-align center
+  letter-spacing 2px
+  color whiteColor
+  padding 18px 30px
+  margin-bottom 16px
+  text-transform uppercase
+  mix-blend-mode normal
+
 .section-title
   font-size 64px
   line-height 80px
@@ -126,15 +138,8 @@
     padding-bottom 200px
 
   &__new-book
-    text-transform uppercase
-    font-size 11px
-    letter-spacing 2px
-    color whiteColor
-    padding 17px 30px
     border 1px solid whiteColor
     background-color rgba(darkColor, 40%)
-    mix-blend-mode normal
-    border-radius 24px
 
     +h(bp-h-big)
       padding 15px 25px
@@ -347,15 +352,6 @@
 .blog-arcticle
   &__category
     background darkOrange
-    border-radius 24px
-    font-size 14px
-    line-height 13px
-    text-align center
-    letter-spacing 2px
-    color whiteColor
-    padding 18px 30px
-    margin-bottom 16px
-    text-transform uppercase
 
   &__title
     font-size 48px
@@ -491,3 +487,259 @@
     left 55%
     transform translate(-35%, -50%)
     css-triangle(15px, #fff, right)
+
+// Newsletter section
+.newsletter
+  padding-top 90px
+  padding-bottom 150px
+  position relative
+
+  &__content
+    max-height 800px
+    coverbg('img/newsletterBG.png')
+    padding 180px 130px
+    display flex
+    border-radius 10px
+    position relative
+
+    &:before
+      content ''
+      coverdiv()
+      background rgba(28, 46, 61, .46)
+
+  &__info, &__signup
+    position relative
+    z-index 100
+
+  &__info
+    width 40%
+
+  &__title
+    color #fff
+
+  &__text
+    margin-top 40px
+    font-family SFCompactText-Regular
+    font-size 16px
+    line-height 21px
+    color #FFFFFF
+
+.signup-form
+  width 35%
+  background #fff
+  border-radius 8px
+  overflow hidden
+  position absolute
+  bottom -90px
+  right 130px
+
+  &__contaner
+    padding 75px 70px
+
+  &__group
+    width 100%
+
+    &:not(:last-child)
+      margin-bottom 32px
+
+  &__label
+    font-size 11px
+    line-height 13px
+    letter-spacing 2px
+    color darkColor
+    display flex
+    flex-flow column nowrap
+
+  &__input
+    padding 10px 0
+    border-bottom 1px solid #bbc0c5
+
+  &__submit-btn
+    background-color neptuneColor
+    width 100%
+    height 90px
+    text-transform uppercase
+    font-size 12px
+    line-height 14px
+    text-align center
+    letter-spacing 2.18182px
+    color #FFFFFF
+
+// Inspirations section
+.inspirations
+  padding 80px 0
+
+  &__text
+    margin-top 40px
+    font-family SFCompactText-Regular
+    font-size 16px
+    line-height 24px
+    color lightGreyColor
+    width 40%
+    margin 0 auto
+    text-align center
+
+  &__list
+    margin-top 30px
+
+  &__info
+    position relative
+    z-index 100
+    color #fff
+
+  &__item
+    border-radius 8px
+    padding 40px
+    position relative
+    overflow hidden
+    display flex
+    align-items flex-end
+
+    &:before
+      content ''
+      coverdiv()
+      background linear-gradient(180deg, rgba(0, 0, 0, .0001) 50%, rgba(0, 0, 0, .461617) 100%)
+
+  &__category
+    font-size 10px
+    line-height 12px
+    letter-spacing 1.1px
+    text-transform uppercase
+    color #fff
+    margin-bottom 101px
+
+  &__title
+    font-size 28px
+    line-height 40px
+    color #fff
+    margin-bottom 10px
+
+  &__peoples
+    display flex
+
+  &__people
+    border-radius 50%
+    width 48px
+    height 48px
+    border 3px solid #fff
+
+    &:not(:last-child)
+      margin-right 10px
+
+  &__feature
+    position absolute
+    right 40px
+    top 40px
+    border 1px solid #fff
+    background rgba(#090E0C, .4)
+
+  &__play-btn
+    width 50px
+    height 50px
+    border-radius 50%
+    border 2px solid #fff
+    position absolute
+    top 40px
+    left 40px
+    cursor pointer
+
+    &:before
+      content ''
+      position absolute
+      top 50%
+      left 55%
+      transform translate(-35%, -50%)
+      css-triangle(10px, #fff, right)
+
+.grid
+  display grid
+  grid-template-columns 1fr 1fr 1fr
+  grid-auto-rows minmax(300px, auto)
+  grid-gap 32px
+
+  .item-tall
+    grid-column span 2 / auto
+
+  .item-height
+    grid-row span 2 / auto
+
+// Footer section
+.footer
+  &__conteiner
+    padding-top 50px
+    padding-bottom 100px
+    display flex
+    justify-content space-between
+
+  &__column
+    display flex
+    flex-direction column
+
+  &__title
+    font-family HelveticaNeue-Bold
+    font-size 12px
+    line-height 14px
+    letter-spacing 2.15px
+    text-transform uppercase
+    color #100E0B
+
+  &__line
+    background #57A773
+    width 48px
+    height 1px
+    display block
+    margin 20px 0
+
+  &__list
+    display flex
+    flex-direction column
+
+  &__item
+    &:not(:last-child)
+      margin-bottom 10px
+
+  &__link
+    font-size 13px
+    line-height 29px
+    color #959EA6
+
+  &__bottom
+    padding 32px 0
+    border-top 1px solid #D9D9D9
+
+    &__container
+      display flex
+      justify-content space-between
+      align-items center
+
+  &__info
+    display flex
+    flex-direction column
+
+  &__tems
+    margin-bottom 10px
+
+  &__tems, &__privacy, &__copyright
+    font-family SFProText-Regular
+    font-size 13px
+    line-height 15px
+    color #959EA6
+
+.subscribe-form
+  display flex
+  flex-direction column
+  width 360px
+
+  &__input
+    margin-bottom 16px
+    background #FFFFFF
+    border 1px solid #E4E4E4
+    border-radius 8px
+    padding 23px 30px
+
+  &__button
+    border-radius 8px
+    padding 25px 0
+    text-transform uppercase
+    background-color neptuneColor
+    color #fff

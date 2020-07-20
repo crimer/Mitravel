@@ -1,5 +1,8 @@
-coverdiv()
-  position absolute
+coverdiv(type = none)
+  if (type != none)
+    position type
+  else
+    position absolute
   top 0
   left 0
   width 100%
@@ -68,7 +71,7 @@ center(axis = both)
 g(color1, color2)
   background linear-gradient(color1, color2)
 
-tr(when = .25s, what = all, how = ease)
+tr(when = .3s, what = all, how = ease)
   -webkit-transition what when how
   -moz-transition what when how
   -ms-transition what when how

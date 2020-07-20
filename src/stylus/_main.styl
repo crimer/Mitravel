@@ -48,10 +48,64 @@
     text-align center
     max-width none
 
-.slider__container
+// Menu (sidebar)
+.menu
+  position fixed
   width 100%
-  padding 100px 0
-  margin-top 40px
+  height 100%
+  left -150vw
+  top 0
+  background-color neptuneColor
+  transition left .3s ease-in-out
+  z-index 10000
+
+  &.menu--visible
+    transition left .3s ease-in-out
+    left 0
+
+  &__nav
+    width 100%
+    height 100%
+    overflow-y auto
+    padding 30px 0
+
+  &__list
+    width 100%
+    height 100%
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    font-weight bold
+    font-size 40px
+
+  &__link
+    transition color .2s ease-in
+    color #fff
+
+    &:hover
+      transition color .2s ease-in
+      color darken(neptuneColor, 30)
+
+    &:not(:last-child)
+      margin-bottom 40px
+
+  &__close
+    width 40px
+    height 3px
+    position absolute
+    top 50px
+    right 50px
+
+  &__close--line
+    coverdiv()
+    background-color whiteColor
+
+    &:first-child
+      transform rotate(45deg)
+
+    &:last-child
+      transform rotate(-45deg)
 
 // Header
 .header
@@ -82,6 +136,11 @@
 
   &__link
     display block
+    transition opacity .3s ease
+
+    &:hover
+      opacity .8
+      transition opacity .3s ease
 
     &--fb
       width 11px
@@ -114,6 +173,11 @@
     position absolute
     top 0
     left 0
+    transition background .3s ease
+
+    ~/:hover &
+      transition background .3s ease
+      background darkOrange
 
     &:last-child
       top auto
@@ -181,6 +245,7 @@
   &__buy-btn
     background darkOrange
     margin-top 45px
+    transition background .3s ease
 
     +h(bp-h-big)
       padding 25px 60px
@@ -188,7 +253,8 @@
     +h(bp-h-medium)
       padding 20px 50px
 
-    &:active
+    &:hover
+      transition background .3s ease
       background darken(darkOrange, 10%)
 
   &__bottom
@@ -199,6 +265,22 @@
     width calc(100% - 60px)
     display flex
     align-items flex-end
+
+  // &__controls
+  &__control
+    position absolute
+    z-index 10
+    bottom 35px
+    width 15px
+    height 15px
+
+  .control--left
+    left 50px
+    coverbg('svg/arrow-left.svg')
+
+  .control--right
+    right 50px
+    coverbg('svg/arrow-right.svg')
 
 .search-form
   width calc(100% - 500px)
@@ -235,8 +317,26 @@
   box-shadow 0px 4px 4px rgba(0, 0, 0, .25)
   border-radius 8px 8px 0px 0px
   line-height 1
+  width 500px
+  overflow hidden
   position absolute
   right 0
+  bottom 0
+
+  &__media
+    height 280px
+    position relative
+
+    video
+      width 100%
+
+  &__media-play
+    vcenter()
+    cursor pointer
+    width 50px
+    height 50px
+    z-index 10
+    coverbg('svg/play.svg')
 
   &__text
     height 120px
@@ -333,7 +433,7 @@
     justify-content flex-end
 
   &__stories
-    padding 100px
+    padding 75px
     background-color featuredLeftColor
     mix-blend-mode normal
     opacity .94
@@ -369,8 +469,10 @@
   &__btn
     margin-top 45px
     background-color neptuneColor
+    transition background .3s ease
 
-    &:active
+    &:hover
+      transition background .3s ease
       background-color darken(neptuneColor, 10%)
 
 .feature-list
@@ -433,60 +535,68 @@
     line-height 24px
     text-align center
     color lightGreyColor
+    margin-bottom 40px
+
+  .swiper-slide
+    padding 40px
+    width 890px
+    display flex
+    flex-direction column
+    justify-content space-between
+    min-height 550px
+
+    &:before
+      content ''
+      background linear-gradient(180deg, rgba(0, 0, 0, .0001) 50%, rgba(0, 0, 0, .461617) 100%)
+      border-radius 8px
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+
+    &--active
+      transition transform .3s ease
+      transform scaleX(1.17) scaleY(1.1)
 
 // Swiper
-.swiper-slide
-  background #E3E3E3
-  box-shadow 0px 4px 4px rgba(0, 0, 0, .25)
-  border-radius 8px
-  min-height 550px
-  transition transform .3s ease
-  width 890px
+.slider__container
+  width 100%
+  height 100%
   position relative
-  padding 40px
-  display flex
-  flex-direction column
-  justify-content space-between
 
-  &:before
-    content ''
-    background linear-gradient(180deg, rgba(0, 0, 0, .0001) 50%, rgba(0, 0, 0, .461617) 100%)
+  .swiper-slide
+    background #E3E3E3
+    box-shadow 0px 4px 4px rgba(0, 0, 0, .25)
     border-radius 8px
-    position absolute
-    top 0
-    left 0
-    width 100%
-    height 100%
-
-  &-active
     transition transform .3s ease
-    transform scaleX(1.17) scaleY(1.1)
-
-  .swiper-text
-    font-size 32px
-    line-height 40px
-    color #fff
     position relative
-    z-index 100
 
-.slide-1
-  coverbg('img/videos2.png')
+    .swiper-text
+      font-size 32px
+      line-height 40px
+      color #fff
+      position relative
+      z-index 100
 
-.swiper-play
-  width 80px
-  height 80px
-  border-radius 50%
-  background-color darkOrange
-  position relative
-  cursor pointer
+  .slide-1
+    coverbg('img/videos2.png')
 
-  &:before
-    content ''
-    position absolute
-    top 50%
-    left 55%
-    transform translate(-35%, -50%)
-    css-triangle(15px, #fff, right)
+  .swiper-play
+    width 80px
+    height 80px
+    border-radius 50%
+    background-color darkOrange
+    position relative
+    cursor pointer
+
+    &:before
+      content ''
+      position absolute
+      top 50%
+      left 55%
+      transform translate(-35%, -50%)
+      css-triangle(15px, #fff, right)
 
 // Newsletter section
 .newsletter
@@ -564,6 +674,11 @@
     text-align center
     letter-spacing 2.18182px
     color #FFFFFF
+    transition background .3s ease
+
+    &:hover
+      background darken(neptuneColor, 10)
+      transition background .3s ease
 
 // Inspirations section
 .inspirations
@@ -743,3 +858,8 @@
     text-transform uppercase
     background-color neptuneColor
     color #fff
+    transition background .3s ease
+
+    &:hover
+      background darken(neptuneColor, 10)
+      transition background .3s ease

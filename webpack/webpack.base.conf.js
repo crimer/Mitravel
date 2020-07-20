@@ -33,6 +33,7 @@ const _plugins = () => {
 			{ from: `${PATHS.src}/assets/img`, to: `${PATHS.assets}img` },
 			{ from: `${PATHS.src}/assets/fonts`, to: `${PATHS.assets}fonts` },
 			{ from: `${PATHS.src}/assets/svg`, to: `${PATHS.assets}svg` },
+			{ from: `${PATHS.src}/assets/videos`, to: `${PATHS.assets}videos` },
 			// { from: `${PATHS.src}/static`, to: "" }
 		]),
 		new CleanWebpackPlugin(),

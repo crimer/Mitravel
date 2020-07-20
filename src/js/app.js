@@ -11,7 +11,7 @@ const videoPlayButtons = document.querySelectorAll('#videoPlayBtn')
 var headerSwiper = new Swiper(headerSlider, {
 	direction: 'horizontal',
 	loop: true,
-	width: 500,
+
 	slidesPerView: 'auto',
 	centeredSlides: true,
 	spaceBetween: 20,

@@ -44,6 +44,14 @@
   line-height 80px
   color darkColor
 
+  +w(bp-w-big)
+    font-size 55px
+    line-height 70px
+
+  +w(bp-w-small)
+    font-size 40px
+    line-height 40px
+
   &--center
     text-align center
     max-width none
@@ -193,13 +201,18 @@
   +h(bp-h-big)
     padding-top 150px
 
-  +h(bp-h-medium)
+  +w(bp-h-medium)
     padding-top 100px
+    padding-bottom 30px
+    height auto
 
   &__container
     position relative
     height 100%
     padding-bottom 200px
+
+    +w(bp-w-medium)
+      padding-bottom 0
 
   &__new-book
     border 1px solid whiteColor
@@ -226,7 +239,14 @@
       line-height 60px
 
     +w(bp-w-large)
-      max-width 70%
+      max-width 50%
+
+    +w(bp-w-big)
+      max-width 100%
+
+    +w(bp-w-medium)
+      font-size 45px
+      line-height 52px
 
   &__text
     font-family SFCompactText-Regular
@@ -240,7 +260,10 @@
       margin-top 35px
 
     +w(bp-w-large)
-      max-width 50%
+      max-width 40%
+
+    +w(bp-w-medium)
+      max-width 100%
 
   &__buy-btn
     background darkOrange
@@ -252,6 +275,9 @@
 
     +h(bp-h-medium)
       padding 20px 50px
+
+    +w(bp-w-small)
+      width 100%
 
     &:hover
       transition background .3s ease
@@ -266,7 +292,17 @@
     display flex
     align-items flex-end
 
-  // &__controls
+    // /
+    +w(bp-w-medium)
+      width auto
+      margin-top 30px
+      align-items flex-start
+      position static
+      left auto
+      bottom auto
+      transform none
+      flex-direction column
+
   &__control
     position absolute
     z-index 10
@@ -289,11 +325,24 @@
   overflow hidden
   height 120px
 
+  +w(bp-w-large)
+    width calc(100% - 350px)
+
   +h(bp-h-big)
     height 100px
 
   +h(bp-h-medium)
     height 80px
+
+  // /
+  +w(bp-w-medium)
+    border-radius 4px
+    margin-bottom 30px
+    width 50%
+    height 60px
+
+  +w(bp-w-small)
+    width 100%
 
   &__field
     background-color #ffffff
@@ -304,6 +353,9 @@
     font-size 16px
     line-height 19px
     color darkColor
+
+    +w(bp-h-medium)
+      padding 20px 90px 20px 20px
 
   &__button
     coverbg('svg/search.svg')
@@ -323,12 +375,26 @@
   right 0
   bottom 0
 
+  +w(bp-w-large)
+    width 350px
+
+  +w(bp-w-medium)
+    position static
+    right auto
+    bottom auto
+
+  +w(bp-w-small)
+    width 100%
+
   &__media
     height 280px
     position relative
 
     video
       width 100%
+
+    +w(bp-w-large)
+      height 100%
 
   &__media-play
     vcenter()
@@ -363,14 +429,23 @@
   background-color #fff
   position relative
 
+  +w(bp-w-large)
+    padding 90px 0
+
   &__title
     max-width 45%
     margin-bottom 80px
 
+    +w(bp-w-big)
+      max-width 100%
+
+    +w(bp-w-medium)
+      text-align center
+
   &__list
     display grid
-    grid-template-columns repeat(auto-fit, minmax(350px, 1fr))
-    grid-gap 10px
+    grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+    grid-gap 20px
 
   &__item
     position relative
@@ -420,11 +495,19 @@
     transform translateY(200px)
     transition transform .3s ease-in-out
 
+// Featured section
 .featured
   position relative
   padding 100px 0
   height 900px
   coverbg('img/storiesBG.png')
+
+  +w(bp-w-large)
+    height 700px
+
+  +w(bp-w-big)
+    height auto
+    padding-bottom 0
 
   &__container
     height 100%
@@ -443,11 +526,30 @@
     right 0
     top 0
 
+    +w(bp-w-large)
+      width 45%
+      padding 50px
+
+    +w(bp-w-big)
+      margin-top 30px
+      padding 30px
+      position relative
+      width 100%
+
   &__title
     font-size 64px
     line-height 80px
     color #FFFFFF
     margin-bottom 60px
+
+    +w(bp-w-large)
+      font-size 55px
+      line-height 60px
+      margin-bottom 20px
+
+    +w(bp-w-big)
+      font-size 35px
+      margin-bottom 0px
 
 .blog-arcticle
   &__category
@@ -459,12 +561,19 @@
     color whiteColor
     margin-bottom 16px
 
+    +w(bp-w-big)
+      font-size 37px
+      line-height 44px
+
   &__text
     font-size 14px
     line-height 21px
     color whiteColor
     margin-bottom 40px
     max-width 40%
+
+    +w(bp-w-big)
+      max-width 80%
 
   &__btn
     margin-top 45px
@@ -489,6 +598,9 @@
     display flex
     align-items center
     padding 30px 0
+
+    +w(bp-w-big)
+      padding 15px 0
 
   &__image
     border-radius 100%
@@ -524,6 +636,10 @@
   padding-top 100px
   padding-bottom 95px
 
+  +w(bp-w-large)
+    padding-top 60px
+    padding-bottom 55px
+
   &__desc
     margin-top 18px
     display block
@@ -537,6 +653,12 @@
     color lightGreyColor
     margin-bottom 40px
 
+    +w(bp-w-big)
+      max-width 100%
+
+    +w(bp-w-medium)
+      margin-top 30px
+
   .swiper-slide
     padding 40px
     width 890px
@@ -544,6 +666,17 @@
     flex-direction column
     justify-content space-between
     min-height 550px
+
+    +w(bp-w-big)
+      min-height 450px
+      width 700px
+
+    +w(bp-w-medium)
+      min-height 350px
+      width 470px
+
+    +w(bp-w-small)
+      width 300px
 
     &:before
       content ''
@@ -590,6 +723,10 @@
     position relative
     cursor pointer
 
+    +w(bp-w-medium)
+      width 50px
+      height 50px
+
     &:before
       content ''
       position absolute
@@ -604,6 +741,10 @@
   padding-bottom 150px
   position relative
 
+  +w(bp-w-big)
+    padding-top 40px
+    padding-bottom 30px
+
   &__content
     max-height 800px
     coverbg('img/newsletterBG.png')
@@ -611,6 +752,16 @@
     display flex
     border-radius 10px
     position relative
+
+    +w(bp-w-big)
+      padding 90px 50px
+      padding-bottom 0
+      justify-content center
+      align-items center
+      flex-direction column
+
+    +w(bp-w-small)
+      padding 50px 30px 0
 
     &:before
       content ''
@@ -623,6 +774,13 @@
 
   &__info
     width 40%
+
+    +w(bp-w-big)
+      width 50%
+      text-align center
+
+    +w(bp-w-medium)
+      width 100%
 
   &__title
     color #fff
@@ -643,8 +801,25 @@
   bottom -90px
   right 130px
 
+  +w(bp-w-big)
+    margin-top 40px
+    width 50%
+    position relative
+    bottom auto
+    right auto
+    margin-bottom 50px
+
+  +w(bp-w-medium)
+    width 100%
+
   &__contaner
     padding 75px 70px
+
+    +w(bp-w-large)
+      padding 55px 50px
+
+    +w(bp-w-big)
+      padding 35px 30px
 
   &__group
     width 100%
@@ -676,6 +851,9 @@
     color #FFFFFF
     transition background .3s ease
 
+    +w(bp-w-big)
+      height 60px
+
     &:hover
       background darken(neptuneColor, 10)
       transition background .3s ease
@@ -683,6 +861,9 @@
 // Inspirations section
 .inspirations
   padding 80px 0
+
+  +w(bp-w-large)
+    padding 60px 0
 
   &__text
     margin-top 40px
@@ -693,6 +874,11 @@
     width 40%
     margin 0 auto
     text-align center
+
+    +w(bp-w-big)
+      width 100%
+      margin-top 30px
+
 
   &__list
     margin-top 30px
@@ -709,7 +895,8 @@
     overflow hidden
     display flex
     align-items flex-end
-
+    +w(bp-w-small)
+      padding 20px
     &:before
       content ''
       coverdiv()
@@ -772,23 +959,39 @@
   grid-auto-rows minmax(300px, auto)
   grid-gap 32px
 
-  .item-tall
-    grid-column span 2 / auto
+  +wmin(bp-w-large)
+    .item-tall
+      grid-column span 2 / auto
 
-  .item-height
-    grid-row span 2 / auto
+    .item-height
+      grid-row span 2 / auto
+
+  +w(bp-w-large)
+    grid-template-columns 1fr
+
+  &__item
+    coverbg()
+
 
 // Footer section
 .footer
   &__conteiner
     padding-top 50px
     padding-bottom 100px
-    display flex
-    justify-content space-between
+    display grid
+    grid-template-columns repeat(auto-fit, minmax(200px, 1fr))
+    grid-gap 20px
+
+    +w(bp-w-large)
+      padding-bottom 50px
+
+    +w(bp-w-big)
+      flex 1 0 50%
 
   &__column
     display flex
     flex-direction column
+    margin-top 20px
 
   &__title
     font-family HelveticaNeue-Bold
@@ -827,9 +1030,17 @@
       justify-content space-between
       align-items center
 
+      +w(bp-w-big)
+        flex-direction column
+
   &__info
     display flex
     flex-direction column
+
+    +w(bp-w-big)
+      align-items center
+      order 0
+      margin-bottom 20px
 
   &__tems
     margin-bottom 10px
@@ -840,10 +1051,15 @@
     line-height 15px
     color #959EA6
 
+  &__copyright
+    +w(bp-w-big)
+      order 1
+      text-align center
+
 .subscribe-form
   display flex
   flex-direction column
-  width 360px
+  max-width 360px
 
   &__input
     margin-bottom 16px

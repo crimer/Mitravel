@@ -51,6 +51,6 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "swiper": "^6.0.4"
+    "swiper": "^6.5.1"
   }
 }
